@@ -11,6 +11,10 @@
 		FA5924222DC271C100D03A9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5924212DC271C100D03A9E /* ContentView.swift */; };
 		FA5924242DC271C300D03A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5924232DC271C300D03A9E /* Assets.xcassets */; };
 		FA5924282DC271C300D03A9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5924272DC271C300D03A9E /* Preview Assets.xcassets */; };
+		FA5924352DC2756E00D03A9E /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5924342DC2756E00D03A9E /* Track.swift */; };
+		FA5924372DC2757E00D03A9E /* MusicFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5924362DC2757E00D03A9E /* MusicFetcher.swift */; };
+		FA5924392DC2759000D03A9E /* MusicPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5924382DC2759000D03A9E /* MusicPlayerViewModel.swift */; };
+		FA59243C2DC276B600D03A9E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = FA59243B2DC276B600D03A9E /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,9 @@
 		FA5924232DC271C300D03A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA5924252DC271C300D03A9E /* music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = music.entitlements; sourceTree = "<group>"; };
 		FA5924272DC271C300D03A9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA5924342DC2756E00D03A9E /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = SOURCE_ROOT; };
+		FA5924362DC2757E00D03A9E /* MusicFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFetcher.swift; sourceTree = "<group>"; };
+		FA5924382DC2759000D03A9E /* MusicPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA59243C2DC276B600D03A9E /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +60,11 @@
 		FA59241E2DC271C100D03A9E /* music */ = {
 			isa = PBXGroup;
 			children = (
+				FA5924322DC2752500D03A9E /* Models */,
+				FA5924312DC2751900D03A9E /* Networking */,
+				FA59242F2DC274DE00D03A9E /* ViewModels */,
+				FA59242E2DC2749700D03A9E /* Views */,
 				FA59241F2DC271C100D03A9E /* musicApp.swift */,
-				FA5924212DC271C100D03A9E /* ContentView.swift */,
 				FA5924232DC271C300D03A9E /* Assets.xcassets */,
 				FA5924252DC271C300D03A9E /* music.entitlements */,
 				FA5924262DC271C300D03A9E /* Preview Content */,
@@ -67,6 +78,38 @@
 				FA5924272DC271C300D03A9E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA59242E2DC2749700D03A9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA5924212DC271C100D03A9E /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA59242F2DC274DE00D03A9E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA5924382DC2759000D03A9E /* MusicPlayerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FA5924312DC2751900D03A9E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FA5924362DC2757E00D03A9E /* MusicFetcher.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FA5924322DC2752500D03A9E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA5924342DC2756E00D03A9E /* Track.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +128,9 @@
 			dependencies = (
 			);
 			name = music;
+			packageProductDependencies = (
+				FA59243B2DC276B600D03A9E /* SwiftSoup */,
+			);
 			productName = music;
 			productReference = FA59241C2DC271C100D03A9E /* music.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +159,9 @@
 				Base,
 			);
 			mainGroup = FA5924132DC271C100D03A9E;
+			packageReferences = (
+				FA59243A2DC276B600D03A9E /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = FA59241D2DC271C100D03A9E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,6 +190,9 @@
 			files = (
 				FA5924222DC271C100D03A9E /* ContentView.swift in Sources */,
 				FA5924202DC271C100D03A9E /* musicApp.swift in Sources */,
+				FA5924352DC2756E00D03A9E /* Track.swift in Sources */,
+				FA5924372DC2757E00D03A9E /* MusicFetcher.swift in Sources */,
+				FA5924392DC2759000D03A9E /* MusicPlayerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,12 +313,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = music/music.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"music/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_FILE[sdk=*]" = Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -297,6 +351,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = music/music.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -350,6 +405,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA59243A2DC276B600D03A9E /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA59243B2DC276B600D03A9E /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA59243A2DC276B600D03A9E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA5924142DC271C100D03A9E /* Project object */;
 }
