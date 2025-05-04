@@ -21,6 +21,8 @@ class MusicPlayerViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
+        setupAudioSession()
+        
         $searchText
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .removeDuplicates()
@@ -28,6 +30,15 @@ class MusicPlayerViewModel: ObservableObject {
                 self?.search(for: text)
             }
             .store(in: &cancellables)
+    }
+    
+    func setupAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Failed to set up audio session:", error)
+        }
     }
 
     func search(for query: String) {
